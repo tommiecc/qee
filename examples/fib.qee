@@ -1,0 +1,27 @@
+import qee/io
+import qee/stdlib
+
+using io, stdlib
+
+define fizzbuzz(n: Int)
+    n % 15 => mod15: Int
+    n % 5 => mod5: Int
+    n % 3 => mod1: Int
+    
+    is 
+        case 0 == mod15
+            println("fizzbuzz")
+            break
+        case 0 == mod5
+            println("fizz")
+            break 
+        case 0 == mod3
+            println("buzz")
+            break
+        after
+            destroyContext(fizzbuzz) => void
+            n - 1 => x: Int
+            fizzbuzz(x)
+
+fizzbuzz(100)
+                

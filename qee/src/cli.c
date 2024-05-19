@@ -10,30 +10,25 @@ int help() {
     if (NULL == helpptr) {
         printf("CLIError: Help file could not be opened or found\n");
     }
+    char buff[255];
+    fgets(buff, 255, helpptr);
+    printf("%s", buff);
 
-    char ch;
-    while(!feof(helpptr)) {
-        ch = fgetc(helpptr);
-        if (ch != "\n") {
-            printf("%c", ch);
-        } else {
-            printf("\n");
-        }
-    }
     fclose(helpptr);
     return 0;
 }
 
 
-int cli(char *args[], int argc) {
+int cli(char *args[], int argsCount) {
     
-    for (int i = 0; i < argc; i++) {
+    int res = 0;
+    for (int i = 0; i < argsCount; i++) {
        printf("%s", args[i]);
         // check for help command
         if (strcmp(args[i], "-h") == 0 || strcmp(args[i], "--help")) {
-            help();
+            res = help();
         }
     }
 
-    return 0;
+    return res;
 }

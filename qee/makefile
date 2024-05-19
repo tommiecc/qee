@@ -7,7 +7,7 @@ EXE := $(BIN_DIR)/qee
 SRC := $(wildcard $(SRC_DIR)/*.c)
 OBJ := $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
-CPPFLAGS := -Iinclude -MMD -MP # -I is a preprocessor flag, not a compiler flag
+CPPFLAGS := -I./include -MMD -MP # -I is a preprocessor flag, not a compiler flag
 CFLAGS   := -Wall              # some warnings about bad code
 LDFLAGS  := -Llib              # -L is a linker flag
 
