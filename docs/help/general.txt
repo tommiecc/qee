@@ -1,0 +1,20 @@
+                 
+   __ _  ___  ___ 
+  / _` |/ _ \/ _ \
+ | (_| |  __/  __/
+  \__, |\___|\___|
+     |_|          
+
+qee Programming Language Command Line Help - General Help
+
+Usage:
+    qee [FLAGS]
+
+General Options:
+    -h, --help [COMMAND]        Print this help message or the help message for a particular function
+    -v, --version               Print qee compiler version
+    -o, --out                   Tell the compiler where the output binaries should go
+    -r, --run                   Runs the binaries after compilation
+
+Examples:
+    qee hello.qee -r            Compile and run 'hello.qee'
